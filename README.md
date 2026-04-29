@@ -1,16 +1,18 @@
 ## READ ME
 This document explain very simple testing of Cisco SCC-cdFMC using Automation Ansible. This test will use API token.
-<n>
+<br><br>
 
 ## Step 1 - Create your SCC-CDO tenant API user with token
 Login to your SCC CDO tenanant and create your API user token
-
+<br>
 
 ## Step 2 - Exporting API Token Key
 
 export CDFMC_API_TOKEN='<YOUR_NEW_API_USER_TOKEN>'
 
 echo $CDFMC_API_TOKEN
+<br>
+
 
 ## Step 3 - Test Base Connectivity
 curl -sk -X GET \
@@ -23,21 +25,28 @@ Extract following details from above results
 - device_record_uuid: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 - current_access_policy_id: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
 - base_url: "https://api.apj.security.cisco.com/firewall"
+<br>
+
 
 ## Step 4 - Receving Access Policy Details
 curl -sk -X GET \
   "https://api.apj.security.cisco.com/firewall/v1/cdfmc/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/policy/accesspolicies" \
   -H "Authorization: Bearer $CDFMC_API_TOKEN" \
   -H "Accept: application/json"
+<br>
+
 
 ## Step 5 - Validate connectivity
 ansible-playbook -i inventory.yml playbooks/00_test.yml
+<br>
 
 ## Step 6 - Create Object
 ansible-playbook -i inventory.yml playbooks/01_create_object.yml
+<br>
 
 ## Step 7 - Create Access Rule
 ansible-playbook -i inventory.yml playbooks/02_create_access_rule.yml
+<br>
 
 
 ## Testing Order
