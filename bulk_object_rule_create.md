@@ -72,7 +72,7 @@ Paste:
 
 Run:
 
-```bash
+```graphql
 ansible-playbook -i inventory.yml playbooks/03_bulk_create_objects.yml
 ```
 
@@ -80,7 +80,7 @@ ansible-playbook -i inventory.yml playbooks/03_bulk_create_objects.yml
 
 Create:
 
-```bash
+```graphql
 nano playbooks/04_bulk_create_access_rules.yml
 ```
 
@@ -139,7 +139,11 @@ Run:
 
 ```yaml
 ansible-playbook -i inventory.yml playbooks/04_bulk_create_access_rules.yml
-4. Verify rules
+```
+
+## 4. Verify rules
+
+```graphql
 curl -sk -X GET \
   "{{YOUR_BASE_URL}}/domain/{{YOUR_DOMAIN_UUID}}/policy/accesspolicies/{{YOUR_POLICY_ID}}/accessrules?expanded=true" \
   -H "Authorization: Bearer $CDFMC_API_TOKEN" \
@@ -148,7 +152,7 @@ curl -sk -X GET \
 
 For your current AUS tenant, use:
 
-```bash
+```graphql
 curl -sk -X GET \
   "https://cisco-spark-cisco-security-platform--sxroua.app.aus.cdo.cisco.com/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/policy/accesspolicies/0AF4F6DE-033D-0ed3-0000-004294969478/accessrules?expanded=true" \
   -H "Authorization: Bearer $CDFMC_API_TOKEN" \
@@ -157,7 +161,7 @@ curl -sk -X GET \
 
 Use this order:
 
-```bash
+```graphql
 ansible-playbook -i inventory.yml playbooks/03_bulk_create_objects.yml
 ansible-playbook -i inventory.yml playbooks/04_bulk_create_access_rules.yml
 ```
