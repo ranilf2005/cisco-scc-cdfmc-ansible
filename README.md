@@ -4,7 +4,7 @@ This document explain very simple testing of Cisco SCC-cdFMC using Automation An
 
 ## Step 1 - Create your SCC-CDO tenant API user with token
 Login to your SCC CDO tenanant and create your API user token  
-
+<br><br>
 
 
 ## Step 2 - Exporting API Token Key
