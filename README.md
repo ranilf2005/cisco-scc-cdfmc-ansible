@@ -19,6 +19,7 @@
 > Always follow your organization's **change control, security, and validation processes** before applying any automation.
 
 ---
+<br>
 
 ## 📌 Overview
 
@@ -35,6 +36,7 @@ The objective is to:
 - Create access rules
 
 ---
+<br>
 
 ## 🔐 Step 1 – Create SCC/CDO API Token
 
@@ -43,6 +45,7 @@ The objective is to:
 3. Copy the generated token securely
 
 ---
+<br>
 
 ## 🔑 Step 2 – Export API Token
 
@@ -55,6 +58,7 @@ Verify:
 ```bash
 echo $CDFMC_API_TOKEN
 ```
+<br>
 
 🌐 Step 3 – Test Base Connectivity
 
@@ -70,7 +74,7 @@ domain_uuid: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 device_record_uuid: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 current_access_policy_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
 base_url: https://api.apj.security.cisco.com/firewall
-
+<br>
 
 📊 Step 4 – Retrieve Access Policy Details
 
@@ -80,21 +84,26 @@ curl -sk -X GET \
   -H "Authorization: Bearer $CDFMC_API_TOKEN" \
   -H "Accept: application/json"
 ```
+<br>
+
 
 ✅ Step 5 – Validate Connectivity (Ansible)
 ```yaml
 ansible-playbook -i inventory.yml playbooks/00_test.yml
 ```
+<br>
 
 🧱 Step 6 – Create Object
 ```yaml
 ansible-playbook -i inventory.yml playbooks/01_create_object.yml
 ```
+<br>
 
 🔐 Step 7 – Create Access Rule
 ```yaml
 ansible-playbook -i inventory.yml playbooks/02_create_access_rule.yml
 ```
+<br>
 
 ▶️ Recommended Test Execution Order
 ```shell
@@ -103,6 +112,7 @@ ansible-playbook -i inventory.yml playbooks/00_test.yml
 ansible-playbook -i inventory.yml playbooks/01_create_object.yml
 ansible-playbook -i inventory.yml playbooks/02_create_access_rule.yml
 ```
+<br>
 
 🧠 Key Notes
 All scripts are modular and reusable
@@ -111,7 +121,7 @@ Your use case
 Your policy structure
 Your object naming standards
 Always validate API responses before proceeding to the next step
-
+<br>
 
 📎 Disclaimer
 
