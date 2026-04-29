@@ -29,7 +29,7 @@ bulk_access_rules:
 
 Create:
 
-```powershell
+```graphql
 nano playbooks/03_bulk_create_objects.yml
 ```
 
