@@ -60,7 +60,7 @@ echo $CDFMC_API_TOKEN
 ```
 <br><br>
 
-🌐 Step 3 – Test Base Connectivity
+## 🌐 Step 3 – Test Base Connectivity
 
 ```bash
 curl -sk -X GET \
@@ -78,7 +78,7 @@ Extract the following details:
 <br><br>
 
 
-📊 Step 4 – Retrieve Access Policy Details
+## 📊 Step 4 – Retrieve Access Policy Details
 
 ```bash
 curl -sk -X GET \
@@ -89,25 +89,25 @@ curl -sk -X GET \
 <br><br>
 
 
-✅ Step 5 – Validate Connectivity (Ansible)
+## ✅ Step 5 – Validate Connectivity (Ansible)
 ```yaml
 ansible-playbook -i inventory.yml playbooks/00_test.yml
 ```
 <br><br>
 
-🧱 Step 6 – Create Object
+## 🧱 Step 6 – Create Object
 ```yaml
 ansible-playbook -i inventory.yml playbooks/01_create_object.yml
 ```
 <br><br>
 
-🔐 Step 7 – Create Access Rule
+## 🔐 Step 7 – Create Access Rule
 ```yaml
 ansible-playbook -i inventory.yml playbooks/02_create_access_rule.yml
 ```
 <br><br>
 
-▶️ Recommended Test Execution Order
+## ▶️ Recommended Test Execution Order
 ```shell
 export CDFMC_API_TOKEN='<YOUR_CDO_API_TOKEN>'
 ansible-playbook -i inventory.yml playbooks/00_test.yml
@@ -116,7 +116,7 @@ ansible-playbook -i inventory.yml playbooks/02_create_access_rule.yml
 ```
 <br><br>
 
-🧠 Key Notes
+## 🧠 Key Notes
 All scripts are modular and reusable
 Modify playbooks based on:
 Your use case
@@ -125,7 +125,7 @@ Your object naming standards
 Always validate API responses before proceeding to the next step
 <br><br>
 
-📎 Disclaimer
+## 📎 Disclaimer
 
 This project is intended to:
 
