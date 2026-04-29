@@ -1,4 +1,4 @@
-## *** VERY IMPPORTANT ***
+***VERY IMPPORTANT***
 This document explain very simple testing of Cisco SCC-cdFMC using Automation Ansible. This test will use API token.  
 <br>
 
