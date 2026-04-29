@@ -44,6 +44,30 @@ The objective is to:
 2. Create an **API user/token**
 3. Copy the generated token securely
 
+To use an API token and connect to the Cloud-Delivered Firewall Management Center (CDFMC) for REST API management, follow these steps:
+
+Generate an API Token
+
+Navigate to Settings > User Management (or Administration > API User Management depending on your workflow).
+Under the desired account, select Generate API Token.
+Copy and securely store the API token. This token is a long-lived bearer token and must be included in the authorization header of your REST API calls[1][2].
+REST API Authentication
+
+Use the token in the HTTP Authorization header for all REST API requests.
+Example using curl:
+```bash
+curl 'https://<cdfmc-server>:<port>/api/fmc_config/v1/domain/<domainUUID>/object/hosts'
+--header 'Authorization: Bearer <api_token>' ```
+```
+
+The token replaces the need for username and password authentication in each request.
+Best Practices
+
+Use separate accounts for API and UI access; do not use the same credentials for both interfaces simultaneously.
+Assign only the necessary privileges to API users.
+Always validate and sanitize content received from the server, especially JSON payloads[3].
+
+
 ---
 <br><br>
 
