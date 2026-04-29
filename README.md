@@ -62,7 +62,7 @@ echo $CDFMC_API_TOKEN
 
 🌐 Step 3 – Test Base Connectivity
 
-```curl
+```bash
 curl -sk -X GET \
   "https://api.apj.security.cisco.com/firewall/v1/inventory/devices" \
   -H "Authorization: Bearer $CDFMC_API_TOKEN" \
@@ -80,7 +80,7 @@ Extract the following details:
 
 📊 Step 4 – Retrieve Access Policy Details
 
-```curl
+```bash
 curl -sk -X GET \
   "https://api.apj.security.cisco.com/firewall/v1/cdfmc/api/fmc_config/v1/domain/e276abec-e0f2-11e3-8169-6d9ed49b625f/policy/accesspolicies" \
   -H "Authorization: Bearer $CDFMC_API_TOKEN" \
