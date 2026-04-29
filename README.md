@@ -53,11 +53,16 @@ The objective is to:
 export CDFMC_API_TOKEN='<YOUR_NEW_API_USER_TOKEN>'
 ```
 
+![export](/images/export.png)
+
+
 Verify:
 
 ```bash
 echo $CDFMC_API_TOKEN
 ```
+
+![export](/images/echo.png)
 <br><br>
 
 ## 🌐 Step 3 – Test Base Connectivity
@@ -68,6 +73,8 @@ curl -sk -X GET \
   -H "Authorization: Bearer $CDFMC_API_TOKEN" \
   -H "Accept: application/json"
 ```
+
+![export](/images/curl1.png)
 <br>
 
 Extract the following details:
@@ -86,6 +93,8 @@ curl -sk -X GET \
   -H "Authorization: Bearer $CDFMC_API_TOKEN" \
   -H "Accept: application/json"
 ```
+
+![export](/images/curl2.png)
 <br><br>
 
 
@@ -93,6 +102,8 @@ curl -sk -X GET \
 ```yaml
 ansible-playbook -i inventory.yml playbooks/00_test.yml
 ```
+
+![export](/images/test1.png)
 <br><br>
 
 ## 🧱 Step 6 – Create Object
